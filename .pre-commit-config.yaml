@@ -23,3 +23,11 @@ repos:
     hooks:
       - id: prettier
         name: Prettier
+
+  - repo: local
+    hooks:
+      - id: dockerfile-provides-entrypoint
+        name: Speccy
+        language: docker_image
+        entry: wework/speccy:latest lint
+        files: 'specs/.*\.(yml|json|yaml)$'
